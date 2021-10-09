@@ -1,0 +1,27 @@
+body {
+    background-color: #C4C4C4;
+}
+.home-image {
+    width: 100%;
+    padding: 0;
+    height: 60vh;
+    object-fit: cover;
+}
+
+.home-buttons {
+    width: 60%;
+    max-width: 200px;
+    min-width: 130px;
+    margin-top: 15%;
+}
+
+.button-color {
+    background-color: #27AE60;
+    border-color: #27AE60;
+    margin-top: 10%;
+}
+
+.button-color:hover {
+    background-color: #3be682 !important;
+    border-color: #3be682 !important;
+}
