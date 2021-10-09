@@ -14,7 +14,7 @@ import './NavBar.scss';
 const NavBar = () => {
 
     return (
-        <Navbar className='navbar-design' expand="lg" >
+        <Navbar className='navbar-design sticky-top' expand="sm" >
             <Container>
                 <Navbar.Brand className='text-light'>Tennis Tournament</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
