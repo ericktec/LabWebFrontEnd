@@ -1,19 +1,14 @@
 import React, { useState } from 'react';
-
 import {
     Button, 
     Form,
     Container,
     Row
 } from 'react-bootstrap';
-
 import './Login.scss';
-
 import imageHeader from './background.jpg'
 
-
 const Login = () => {
-
     const [email, setEmail] = useState( '' );
     const [password, setPassword] = useState( '' );
 
@@ -24,11 +19,9 @@ const Login = () => {
             window.alert( 'Missing credentials' );
         }
     };
-
     return (
         
         <Container fluid>
-           
             <Row>
                 <img src={ imageHeader } className='header-image' alt='img'/>
             </Row>
