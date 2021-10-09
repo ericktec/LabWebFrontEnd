@@ -5,9 +5,13 @@ const Home = () => {
 
     return (
         <div>
-            Login
+            Home
         </div>
     )
 };
 
 export default Home;
+
+
+
+
