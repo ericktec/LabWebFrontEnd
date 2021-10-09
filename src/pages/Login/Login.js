@@ -11,10 +11,10 @@ import {
 import './Login.scss';
 
 
-const Home = () => {
+const Login = () => {
 
-    const [email, setEmail] = useState( "" );
-    const [password, setPassword] = useState( "" );
+    const [email, setEmail] = useState( '' );
+    const [password, setPassword] = useState( '' );
 
     const submitHandler = () => {
         if ( email && password ){
@@ -56,4 +56,4 @@ const Home = () => {
     )
 };
 
-export default Home;
+export default Login;

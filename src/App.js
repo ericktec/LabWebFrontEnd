@@ -11,6 +11,7 @@ import {
 
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import Signup from './pages/Signup/Signup';
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
 
           <Route path='/login'>
             <Login />
+          </Route>
+
+          <Route path='/signup'>
+            <Signup />
           </Route>
 
           <Route path='/'>
