@@ -1,3 +1,24 @@
-.login-card {
-    width: 25rem;
+
+
+.button-color {
+    background-color: #27AE60;
+    border-color: #27AE60;
+    
+}
+
+.button-color:hover {
+    background-color: #3be682 !important;
+    border-color: #3be682 !important;
+}
+.container-button {
+    width: 60%;
+    max-width: 200px;
+}
+
+
+.header-image {
+    width: 100%;
+    padding: 0;
+    height: 20vh;
+    object-fit: cover;
 }

@@ -1,7 +1,5 @@
 import './Styles/App.scss';
 
-
-
 import {
   BrowserRouter as Router,
   // Link,
@@ -12,10 +10,12 @@ import {
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
+import Navbar from './components/NavBar/NavBar';
 
 function App() {
   return (
     <div>
+      <Navbar/>
       <Router>
 
         <Switch>
