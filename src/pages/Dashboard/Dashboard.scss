@@ -6,3 +6,9 @@
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(142,213,173,1) 59%, rgba(39,174,96,1) 100%);
 }
+
+.tournament-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
