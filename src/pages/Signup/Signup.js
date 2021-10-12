@@ -7,6 +7,8 @@ import {
     Row
 } from 'react-bootstrap';
 
+import { Link } from 'react-router-dom';
+
 import './Signup.scss';
 
 import imageHeader from '../Login/background.jpg'
@@ -21,11 +23,14 @@ const Signup = () => {
     return (
         <Container fluid>
             <Row>
+                <div className='fake-navbar'></div>
+            </Row>
+            <Row>
                 <img src={ imageHeader } className='header-image' alt='img'/>
             </Row>
             <Row className='px-5'>
                     <Form className='mt-5'> 
-                    <Form.Group className='mb-3' controlId='formBasicEmail'>
+                    <Form.Group className='mb-3'>
                             <Form.Label>Nombre Completo</Form.Label>
                             <Form.Control 
                                 type='text' 
@@ -34,7 +39,7 @@ const Signup = () => {
                                 onChange={ ( e ) => setFullName( e.target.value ) } />
                         </Form.Group>
 
-                        <Form.Group className='mb-3' controlId='formBasicEmail'>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Correo Electronico</Form.Label>
                             <Form.Control 
                                 type='email' 
@@ -52,7 +57,7 @@ const Signup = () => {
                                 onChange={ ( e ) => setPassword( e.target.value ) }/>
                         </Form.Group>
 
-                        <Form.Group className='mb-3' controlId='formBasicPassword'>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Confirmar Contraseña</Form.Label>
                             <Form.Control 
                                 type='password' 
@@ -61,7 +66,7 @@ const Signup = () => {
                                 onChange={ ( e ) => setConfirmPassword( e.target.value ) }/>
                         </Form.Group>
 
-                        <Form.Group className='mb-3' controlId='formBasicPassword'>
+                        <Form.Group className='mb-3'>
                             <Form.Label>Codigo de acceso de administradores</Form.Label>
                             <Form.Control 
                                 type='password' 
@@ -73,8 +78,13 @@ const Signup = () => {
                         <Container className='container-button'>
                             <Row>
                                 <Button className='button-color' >
-                                    Sign up
+                                    Crear cuenta
                                 </Button>
+                            </Row>
+                            <Row className='align'>
+                                <Link to="/login">
+                                    Iniciar sesión.
+                                </Link>
                             </Row>
                         </Container>
 

@@ -6,6 +6,8 @@ import {
     Button
 } from 'react-bootstrap';
 
+import { Link } from 'react-router-dom';
+
 import './Home.scss';
 
 import imageHeader from './background.jpeg';
@@ -16,25 +18,28 @@ const Home = () => {
     return (
         <Container fluid>
 
-            
-
             <Row className='phone-header'>
                 <img src={imageHeader} className='phone-header-sm' alt='img' />
             </Row>
+
             <Row>
                 <img src={imageHeaderLarge} className='desktop-header-lg' alt='img' />
             </Row>
 
             <Container className='home-buttons'>
-                <Row>
-                    <Button className='button-color'>
-                        Iniciar sesión
-                    </Button>
+                <Row className='align'>
+                    <Link to='/login' >
+                        <Button className='button-color'>
+                            INICIAR SESIÓN
+                        </Button>
+                    </Link>
                 </Row>
-                <Row>
-                    <Button className='button-color'>
-                        Continuar sin sesión
-                    </Button>
+                <Row className='align'>
+                    <Link to='/login'>
+                        <Button className='button-color'>
+                            CONTINUAR SIN INICIAR SESIÓN
+                        </Button>
+                    </Link>
                 </Row>
 
             </Container>
