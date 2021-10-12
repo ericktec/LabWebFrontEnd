@@ -16,6 +16,8 @@ const Home = () => {
     return (
         <Container fluid>
 
+            
+
             <Row className='phone-header'>
                 <img src={imageHeader} className='phone-header-sm' alt='img' />
             </Row>
