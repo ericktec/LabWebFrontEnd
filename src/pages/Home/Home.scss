@@ -1,15 +1,22 @@
-.home-image {
+.phone-header-sm {
     width: 100%;
     padding: 0;
-    height: 60vh;
+    height: 40vh;
+    object-fit: cover;
+}
+
+.desktop-header-lg {
+    width: 100%;
+    padding: 0;
+    height: 30vh;
     object-fit: cover;
 }
 
 .home-buttons {
-    width: 60%;
+    padding-top: 10vh;
+    width: 50%;
     max-width: 200px;
     min-width: 130px;
-    margin-top: 15%;
 }
 
 .button-color {
@@ -21,4 +28,15 @@
 .button-color:hover {
     background-color: #3be682 !important;
     border-color: #3be682 !important;
+}
+
+@media only screen and (max-width: 666px) {
+    .desktop-header-lg {
+      display: none;
+    }
+}
+@media only screen and (min-width: 666px) {
+    .phone-header-sm {
+      display: none;
+    }
 }

@@ -17,6 +17,7 @@ function App() {
   return (
     <div>
       <Navbar/>
+      
       <Router>
         <Switch>
           <Route path='/login'>

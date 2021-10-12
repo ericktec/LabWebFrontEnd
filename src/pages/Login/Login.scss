@@ -1,7 +1,7 @@
 .button-color {
     background-color: #27AE60;
     border-color: #27AE60;
-    
+    min-width: 130px;
 }
 
 .button-color:hover {
@@ -10,8 +10,6 @@
 }
 .container-button {
     width: 60%;
-    max-width: 200px;
-    min-width: 130px;
 }
 
 
