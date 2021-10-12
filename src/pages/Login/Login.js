@@ -6,7 +6,9 @@ import {
     Row
 } from 'react-bootstrap';
 import './Login.scss';
-import imageHeader from './background.jpg'
+import imageHeader from './background.jpg';
+
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState( '' );
@@ -22,6 +24,9 @@ const Login = () => {
     return (
         
         <Container fluid>
+            <Row>
+                <div className='fake-navbar'></div>
+            </Row>
             <Row>
                 <img src={ imageHeader } className='header-image' alt='img'/>
             </Row>
@@ -44,11 +49,17 @@ const Login = () => {
                                 value={ password } 
                                 onChange={ ( e ) => setPassword( e.target.value ) }/>
                         </Form.Group>
-                        <Container className='container-button'>
-                            <Row>
+                        <Container  fluid className='container-button'>
+                            
+                            <Row >
                                 <Button onClick={ submitHandler } className='button-color'>
                                     Iniciar sesión
                                 </Button>
+                            </Row>
+                            <Row className='align'>
+                                <Link to="/signup">
+                                    Crear cuenta.
+                                </Link>
                             </Row>
                         </Container>
                     </Form>
