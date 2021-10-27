@@ -19,7 +19,15 @@ const Dashboard = () => {
                 </Row>
                 <Row>
                     <Container>
-                        <CardTournament></CardTournament>
+                        <CardTournament
+                            tournamentName = { 'Tepatitlan' }
+                            tournamentImage = { 'https://www.wallpapertip.com/wmimgs/31-315325_tennis-ball-sport-wallpaper-tennis-wallpapers-hd.jpg' }
+                        />
+
+                        <CardTournament
+                            tournamentName = { 'Lagos de Moreno' }
+                            tournamentImage = { 'https://images5.alphacoders.com/971/thumb-1920-971321.jpg' }
+                        />
                     </Container>
                 </Row>
             </Container>
