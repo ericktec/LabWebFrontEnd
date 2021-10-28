@@ -12,6 +12,7 @@ import Home from './pages/Home/Home';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
+import Matches from './pages/Matches/Matches';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -67,6 +68,10 @@ function App() {
 
       <Route path='/signup'>
         <Signup />
+      </Route>
+      
+      <Route path='/matches'>
+        <Matches />
       </Route>
 
       <Route path='/dashboard'>
