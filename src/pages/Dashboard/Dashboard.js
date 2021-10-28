@@ -8,7 +8,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import CardTournament from '../../components/CardTournament/CardTournament';
 import axios from 'axios';
 
-const Dashboard = ({ loggedIn, setLoggedIn }) => {
+const Dashboard = () => {
 
     const [tournaments, setTournaments] = useState([]);
 
@@ -32,7 +32,6 @@ const Dashboard = ({ loggedIn, setLoggedIn }) => {
 
     return (
         <div>
-            <NavBar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
             <Container fluid>
                 <Row>
                     <div className='box-header-gradient'>Torneos</div>
