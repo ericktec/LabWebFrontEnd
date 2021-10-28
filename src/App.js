@@ -57,7 +57,7 @@ function App() {
     if (loggedIn.signIn) {
       checkUserLoggedIn();
     }
-  }, [loggedIn.signIn]);
+  }, [loggedIn.signIn, history]);
 
   return (
 
