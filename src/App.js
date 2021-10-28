@@ -60,28 +60,30 @@ function App() {
   }, [loggedIn.signIn, history]);
 
   return (
+    <>
+      <Switch>
+        <Route path='/login'>
+          <Login setLoggedIn={setLoggedIn} />
+        </Route>
 
-    <Switch>
-      <Route path='/login'>
-        <Login setLoggedIn={setLoggedIn} />
-      </Route>
+        <Route path='/signup'>
+          <Signup />
+        </Route>
 
-      <Route path='/signup'>
-        <Signup />
-      </Route>
-      
-      <Route path='/matches'>
-        <Matches />
-      </Route>
+        <Route path='/matches'>
+          <Matches />
+        </Route>
 
-      <Route path='/dashboard'>
-        <Dashboard loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-      </Route>
+        <Route path='/dashboard'>
+          <Dashboard />
+        </Route>
 
-      <Route path='/'>
-        <Home />
-      </Route>
-    </Switch>
+        <Route path='/'>
+          <Home />
+        </Route>
+      </Switch>
+    </>
+
   );
 }
 

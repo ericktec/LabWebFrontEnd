@@ -39,23 +39,22 @@ const Matches = () => {
 
     return (
         <div>
-            <NavBar />
-            
-            <PageTitle title={ pageTitle }/>
+
+            <PageTitle title={pageTitle} />
 
             <Container>
-                { dataMatches.map( match => {
+                {dataMatches.map(match => {
                     return (
-                        <MatchCard 
-                            player1 = { match.player1 }
-                            imagePlayer1 = { match.imagePlayer1 }
-                            imagePlayer2 = { match.imagePlayer2 }
-                            player2 = { match.player2 }
-                            place = { match.place }
-                            round = { match.round }
-                            score = { match.score } />
+                        <MatchCard
+                            player1={match.player1}
+                            imagePlayer1={match.imagePlayer1}
+                            imagePlayer2={match.imagePlayer2}
+                            player2={match.player2}
+                            place={match.place}
+                            round={match.round}
+                            score={match.score} />
                     )
-                } ) }
+                })}
             </Container>
         </div>
     );
