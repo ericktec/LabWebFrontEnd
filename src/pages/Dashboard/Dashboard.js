@@ -4,7 +4,6 @@ import {
     Row
 } from 'react-bootstrap';
 import './Dashboard.scss';
-import NavBar from '../../components/NavBar/NavBar';
 import CardTournament from '../../components/CardTournament/CardTournament';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import axios from 'axios';

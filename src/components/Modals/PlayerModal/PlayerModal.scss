@@ -1,0 +1,29 @@
+.modalTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.inputLabel {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+@media (min-width: 200px) {
+    .inputImage {
+        max-width: 35%;
+    }
+    
+}
+
+@media (min-width: 769px) {
+    .inputImage {
+        max-width: 40%;
+    }
+}
+
+@media (min-width: 992px) {
+    .inputImage {
+        max-width: 25%;
+    }
+}

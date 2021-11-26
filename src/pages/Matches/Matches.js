@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../../components/NavBar/NavBar';
 import { Container } from 'react-bootstrap';
 import MatchCard from '../../components/MatchCard/MatchCard';
 import PageTitle from '../../components/PageTitle/PageTitle';
