@@ -13,10 +13,11 @@
 }
 
 .home-buttons {
-    padding-top: 10vh;
-    width: 50%;
-    max-width: 200px;
-    min-width: 130px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 .button-color {

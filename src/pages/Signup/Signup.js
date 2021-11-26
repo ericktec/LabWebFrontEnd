@@ -4,7 +4,8 @@ import {
     Button,
     Form,
     Container,
-    Row
+    Row,
+    Col
 } from 'react-bootstrap';
 
 import { useHistory } from 'react-router-dom';
@@ -16,6 +17,8 @@ import './Signup.scss';
 import imageHeader from '../Login/background.jpg';
 
 import axios from 'axios';
+
+import PageTitle from '../../components/PageTitle/PageTitle';
 
 const Signup = () => {
 
@@ -68,12 +71,12 @@ const Signup = () => {
     return (
         <Container fluid>
             <Row>
-                <div className='fake-navbar'></div>
+                <PageTitle title='Crear Cuenta'/>
             </Row>
             <Row>
                 <img src={imageHeader} className='header-image' alt='img' />
             </Row>
-            <Row className='px-5'>
+            <Row className='px-5 mb-5'>
                 <Form className='mt-5'>
                     <Form.Group className='mb-3'>
                         <Form.Label>Nombre completo</Form.Label>
@@ -121,19 +124,16 @@ const Signup = () => {
                             onChange={(e) => setAccessCode(e.target.value)} />
                     </Form.Group>
 
-                    <Container className='container-button'>
-                        <Row>
-                            <Button className='button-color' onClick={signUpHandler}>
+                    <Row>
+                        <Col className='container-button'>
+                            <Button className='button-color mb-2' onClick={signUpHandler}>
                                 Crear cuenta
                             </Button>
-                        </Row>
-                        <Row className='align'>
                             <Link to="/login">
-                                Iniciar sesión.
+                                Iniciar sesión
                             </Link>
-                        </Row>
-                    </Container>
-
+                        </Col>
+                    </Row>
                 </Form>
             </Row>
         </Container>
