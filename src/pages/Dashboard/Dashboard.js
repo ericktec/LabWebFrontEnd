@@ -35,7 +35,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <PageTitle title={pageTitle} />
+            <PageTitle title={pageTitle} modal={pageTitle}/>
             <Container fluid>
                 <Row>
                     <Container>

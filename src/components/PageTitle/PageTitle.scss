@@ -4,6 +4,15 @@
     cursor: pointer;
 }
 
+.editButton, .editButton:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.editButton:focus {
+    background-color: transparent;
+}
+
 .box-header-gradient {
     color: white;
     font-size: 30px;
