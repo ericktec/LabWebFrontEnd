@@ -35,7 +35,7 @@ const Home = () => {
                     </Link>
                 </Row>
                 <Row className='align'>
-                    <Link to='/login'>
+                    <Link to='/dashboard'>
                         <Button className='button-color'>
                             CONTINUAR SIN INICIAR SESIÓN
                         </Button>

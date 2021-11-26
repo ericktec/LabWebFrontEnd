@@ -1,4 +1,4 @@
-#ediIcon {
+#editIcon {
     width: 30px;
     height: auto;
     cursor: pointer;
@@ -14,10 +14,16 @@
 }
 
 .text-right {
-    text-align: right;
-    
+    align-items: center;
+    justify-content: end;
+    display: flex;
 }
 
 .text-title {
     font-size: 40px;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: start;
 }

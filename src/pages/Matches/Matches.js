@@ -10,6 +10,7 @@ const Matches = () => {
 
     const dataMatches = [
         {
+            id: '1',
             round: 'Semi-final',
             player1: 'Erick',
             player2: 'Gus',
@@ -23,6 +24,7 @@ const Matches = () => {
             }
         },
         {
+            id: '2',
             round: 'Semi-final',
             player1: 'Frank',
             imagePlayer1: 'https://cdn.discordapp.com/attachments/811013231438987294/878060561034801212/20210819_183907.jpg',
@@ -42,10 +44,11 @@ const Matches = () => {
 
             <PageTitle title={pageTitle} />
 
-            <Container>
+            <Container fluid>
                 {dataMatches.map(match => {
                     return (
                         <MatchCard
+                            key={match.id}
                             player1={match.player1}
                             imagePlayer1={match.imagePlayer1}
                             imagePlayer2={match.imagePlayer2}

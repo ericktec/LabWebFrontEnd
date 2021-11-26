@@ -6,11 +6,14 @@ import {
 import './Dashboard.scss';
 import NavBar from '../../components/NavBar/NavBar';
 import CardTournament from '../../components/CardTournament/CardTournament';
+import PageTitle from '../../components/PageTitle/PageTitle';
 import axios from 'axios';
 
 const Dashboard = () => {
 
     const [tournaments, setTournaments] = useState([]);
+
+    const pageTitle = 'Torneos';
 
     useEffect(() => {
         async function getTournaments() {
@@ -32,10 +35,8 @@ const Dashboard = () => {
 
     return (
         <div>
+            <PageTitle title={pageTitle} />
             <Container fluid>
-                <Row>
-                    <div className='box-header-gradient'>Torneos</div>
-                </Row>
                 <Row>
                     <Container>
 

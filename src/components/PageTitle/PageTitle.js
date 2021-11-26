@@ -9,11 +9,13 @@ const PageTitle = ( props ) => {
     return (
         <Container fluid className='box-header-gradient'>
             <Row>
-                <Col className='text-title'>
+                <Col className='text-title p-3 px-4'>
                     <div>{ title }</div>
                 </Col>
-                <Col className='text-right'>
-                    <Image id='ediIcon' src={ editIcon }/>
+                <Col className='text-right p-4'>
+                    <div className="d-flex">
+                        <Image id='editIcon' src={ editIcon }/>
+                    </div>
                 </Col>
             </Row>
         </Container>
