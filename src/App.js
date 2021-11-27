@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Matches from './pages/Matches/Matches';
+import Details from './pages/Details/Details';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -64,6 +65,10 @@ function App() {
       <Switch>
         <Route path='/login'>
           <Login setLoggedIn={setLoggedIn} />
+        </Route>
+
+        <Route path='/details'>
+          <Details />
         </Route>
 
         <Route path='/signup'>
