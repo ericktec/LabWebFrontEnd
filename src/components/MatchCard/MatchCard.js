@@ -2,29 +2,25 @@ import React from 'react';
 import { Card, Container, Row, Col, Image } from 'react-bootstrap';
 import './MatchCard.scss';
 
-const MatchCard = ( props ) => {
+const MatchCard = ( { round, player1, player2, imagePlayer1, imagePlayer2, score } ) => {
 
-    const round = props.round;
-    const place = props.place;
-    const player1 = props.player1;
-    const imagePlayer1 = props.imagePlayer1;
-    const player2 = props.player2;
-    const imagePlayer2 = props.imagePlayer2;
-    const score = props.score;
-    const scorePlayer1 = `${score.firstSet[0]}   ${score.secondSet[0]}   ${score.thirdSet[0]}`; 
-    const scorePlayer2 = `${score.firstSet[1]}   ${score.secondSet[1]}   ${score.thirdSet[1]}`; 
+  
+    let scorePlayer1 = '';
+    let scorePlayer2 = '';
+    score.forEach( element => {
+        scorePlayer1 += element.first_registration_games + ' ';
+        scorePlayer2 += element.second_registration_games + ' ';
+    } );
+
 
     return (
         <Row className='px-5 pt-4'>
-            <Card className='card-color rounded-0 shadow-sm' >
+            <Card className='card-color rounded-0 shadow-sm'>
                 <Card.Body>
                     <Container className='p-0'>
                         <Row>
                             <Col className='text-left'>
-                                <Card.Text> { round } </Card.Text>
-                            </Col>
-                            <Col className='text-right'>
-                                <Card.Text className="text-muted"> { place } </Card.Text>
+                                <Card.Text> Ronda { round } </Card.Text>
                             </Col>
                         </Row>
                         <Row className='py-4'>
