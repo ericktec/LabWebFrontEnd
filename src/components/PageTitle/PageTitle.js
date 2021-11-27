@@ -7,6 +7,9 @@ import backIcon from './backIcon.png';
 import TournamentModal from '../Modals/TournamentModal/TournamentModal';
 import PlayerModal from '../Modals/PlayerModal/PlayerModal';
 import MatchModal from '../Modals/MatchModal/MatchModal';
+
+import RegisterPlayerModal from '../Modals/RegisterPlayer/RegisterPlayer';
+
 import { useHistory } from 'react-router-dom';
 
 const PageTitle = ( props ) => {
@@ -16,6 +19,7 @@ const PageTitle = ( props ) => {
     const [torneoModal, setTorneoModal] = React.useState(false);
     const [playerModal, setPlayerModal] = React.useState(false);
     const [matchModal, setMatchModal] = React.useState(false);
+    const [registerModal, setRegisterModal] = React.useState(false);
 
     const history = useHistory();
 
@@ -61,10 +65,13 @@ const PageTitle = ( props ) => {
                     <Col xs={4} md={4} className='text-right pt-3'>
                         <div className="d-flex">
                             { title === 'Partidos' ? 
-                                <Button className='editButton' onClick={() => setPlayerModal(true)}>
+                                <Button className='editButton' onClick={() => setRegisterModal(true)}>
                                     <Image id='editIcon' src={ addPlayer }/>
                                 </Button>
-                            : false }
+                            :   <Button className='editButton' onClick={() => setPlayerModal(true)}>
+                                    <Image id='editIcon' src={ addPlayer }/>
+                                </Button> 
+                            }
                             <Button className='editButton' onClick={selectModal}>
                                 <Image id='editIcon' src={ editIcon }/>
                             </Button>
@@ -90,6 +97,12 @@ const PageTitle = ( props ) => {
                 show={matchModal}
                 onHide={() => setMatchModal(false)}
             />
+
+            <RegisterPlayerModal
+                show={registerModal}
+                onHide={() => setRegisterModal(false)}
+            />
+
         </Container>
 
     );
