@@ -16,6 +16,7 @@ import imageHeaderLarge from './backgroun-large.jpg';
 
 const Home = () => {
     return (
+        <div>
         <Container fluid>
 
             <Row className='phone-header'>
@@ -26,25 +27,26 @@ const Home = () => {
                 <img src={imageHeaderLarge} className='desktop-header-lg' alt='img' />
             </Row>
 
-            <Container className='home-buttons'>
-                <Row className='align'>
-                    <Link to='/login' >
-                        <Button className='button-color'>
-                            INICIAR SESIÓN
-                        </Button>
-                    </Link>
-                </Row>
-                <Row className='align'>
-                    <Link to='/dashboard'>
-                        <Button className='button-color'>
-                            CONTINUAR SIN INICIAR SESIÓN
-                        </Button>
-                    </Link>
-                </Row>
-
-            </Container>
 
         </Container>
+        <Container className='home-buttons box-header-gradient' fluid>
+            <Row className='align'>
+                <Link to='/login' >
+                    <Button className='button-color'>
+                        INICIAR SESIÓN
+                    </Button>
+                </Link>
+            </Row>
+            <Row className='align'>
+                <Link to='/dashboard'>
+                    <Button className='button-color'>
+                        CONTINUAR SIN INICIAR SESIÓN
+                    </Button>
+                </Link>
+            </Row>
+
+        </Container>
+        </div>
     )
 };
 

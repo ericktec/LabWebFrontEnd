@@ -10,7 +10,11 @@
 }
 
 .container-button {
-    width: 100%;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 }
 
 .header-image {

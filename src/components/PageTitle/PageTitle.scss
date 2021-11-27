@@ -1,7 +1,16 @@
 #editIcon {
-    width: 30px;
+    width: 1.5rem;
     height: auto;
     cursor: pointer;
+}
+
+.editButton, .editButton:hover {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.editButton:focus {
+    background-color: transparent;
 }
 
 .box-header-gradient {
@@ -15,15 +24,21 @@
 
 .text-right {
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
+    display: flex;
+}
+
+.text-left {
+    align-items: center;
+    justify-content: flex-start;
     display: flex;
 }
 
 .text-title {
-    font-size: 40px;
+    font-size: 2rem;
     font-weight: bold;
     color: #000;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
 }

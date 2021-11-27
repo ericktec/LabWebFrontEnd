@@ -3,12 +3,14 @@ import {
     Button,
     Form,
     Container,
-    Row
+    Row,
+    Col
 } from 'react-bootstrap';
 import './Login.scss';
 import imageHeader from './background.jpg';
 import axios from 'axios';
 import { Link, useHistory } from 'react-router-dom';
+import PageTitle from '../../components/PageTitle/PageTitle';
 
 const Login = ({ setLoggedIn }) => {
     const [email, setEmail] = useState('');
@@ -56,7 +58,7 @@ const Login = ({ setLoggedIn }) => {
 
         <Container fluid>
             <Row>
-                <div className='fake-navbar'></div>
+                <PageTitle title='Iniciar Sesion'/>
             </Row>
             <Row>
                 <img src={imageHeader} className='header-image' alt='img' />
@@ -80,19 +82,16 @@ const Login = ({ setLoggedIn }) => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)} />
                     </Form.Group>
-                    <Container fluid className='container-button'>
-
-                        <Row >
+                    <Row >
+                        <Col className='container-button mb-2'>
                             <Button onClick={submitHandler} className='button-color'>
                                 Iniciar sesión
                             </Button>
-                        </Row>
-                        <Row className='align'>
                             <Link to="/signup">
-                                Crear cuenta.
+                                Crear cuenta
                             </Link>
-                        </Row>
-                    </Container>
+                        </Col>
+                    </Row>
                 </Form>
             </Row>
         </Container>
