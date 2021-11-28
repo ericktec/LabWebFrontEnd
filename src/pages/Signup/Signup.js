@@ -20,7 +20,7 @@ import axios from 'axios';
 
 import PageTitle from '../../components/PageTitle/PageTitle';
 
-const Signup = () => {
+const Signup = (props) => {
 
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
@@ -71,7 +71,7 @@ const Signup = () => {
     return (
         <Container fluid>
             <Row>
-                <PageTitle title='Crear Cuenta'/>
+                <PageTitle title='Crear Cuenta' loggedIn={props.loggedIn}/>
             </Row>
             <Row>
                 <img src={imageHeader} className='header-image' alt='img' />

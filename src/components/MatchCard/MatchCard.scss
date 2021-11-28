@@ -6,6 +6,7 @@
     text-align: left;
 }
 .card-color {
+    cursor: pointer;
     background-color: #E0E0E0;
 }
 .image-size {
@@ -18,4 +19,12 @@
 }
 p {
     font-size: 20px !important;
+}
+
+.arrowIcon {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    clip-path: polygon(50% 0, 100% 53%, 50% 100%);
+    margin-right: 7px;
 }

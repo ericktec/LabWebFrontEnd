@@ -28,9 +28,9 @@ function App() {
 
   const history = useHistory();
   const [loggedIn, setLoggedIn] = useState({
-    signIn: localStorage.getItem('logIn') || false,
+    signIn: false,
     userInfo: {
-      userName: localStorage.getItem('userName') || ''
+      userName: ''
     }
   });
 
@@ -45,9 +45,18 @@ function App() {
         });
         const data = response.data;
         if (data.status === 'loggedIn') {
+          setLoggedIn({
+            signIn: true,
+            userInfo: {
+                userName: response.data.user.name
+            }
+        })
           return history.push('/dashboard');
+        }else {
+          localStorage.setItem('logIn', false);
+          localStorage.setItem('userName', '');
         }
-        console.log(response)
+        console.log(response.data)
       } catch (error) {
         console.log(error);
         localStorage.setItem('logIn', false);
@@ -55,9 +64,8 @@ function App() {
       }
 
     }
-    if (loggedIn.signIn) {
-      checkUserLoggedIn();
-    }
+    checkUserLoggedIn();
+    
   }, [loggedIn.signIn, history]);
 
   return (
@@ -68,19 +76,19 @@ function App() {
         </Route>
 
         <Route path='/details'>
-          <Details />
+          <Details loggedIn={loggedIn} />
         </Route>
 
         <Route path='/signup'>
-          <Signup />
+          <Signup loggedIn={loggedIn} />
         </Route>
 
         <Route path='/matches'>
-          <Matches />
+          <Matches loggedIn={loggedIn} />
         </Route>
 
         <Route path='/dashboard'>
-          <Dashboard />
+          <Dashboard loggedIn={loggedIn} />
         </Route>
 
         <Route path='/'>

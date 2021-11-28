@@ -8,7 +8,7 @@ import defaultImage from '../PlayerModal/defaultImage.png';
 
 import axios from 'axios';
 
-const RegisterPlayer = ( {tournamentId, ...props } ) => {
+const RegisterPlayer = ( {tournamentId, setNewPlayer, ...props } ) => {
 
 
     const [players, setPlayers] = React.useState([]);
@@ -56,10 +56,19 @@ const RegisterPlayer = ( {tournamentId, ...props } ) => {
             if ( response.status === 200 && response.data.status === 'success') {
                 Notification.requestPermission().then(function (permission) {
                     if (permission === "granted") {
-                        new Notification("Jugaddor registrado");
+                        new Notification("Jugador registrado");
                     }
                 });
                 handleOnHide();
+                //window.location.reload();
+                setNewPlayer(tournamentId);
+            }
+            else {
+                Notification.requestPermission().then(function (permission) {
+                    if (permission === "granted") {
+                        new Notification("Sucedió un error favor de intentar nuevamente");
+                    }
+                });
             }
         } catch (error) {
             console.error(error);

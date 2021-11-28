@@ -5,9 +5,13 @@ import PageTitle from '../../components/PageTitle/PageTitle';
 import { useHistory, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
-const Matches = () => {
+const Matches = (props) => {
 
   const [matches, setMatches] = useState([]);
+
+  const [newMatch, setNewMatch] = useState();
+
+  const [newPlayer, setNewPlayer] = useState();
 
   const history = useHistory();
 
@@ -15,7 +19,9 @@ const Matches = () => {
 
   const location = useLocation();
 
-  const id = location.state.id;
+  const id = location.state ? location.state.id : history.push('/dashboard');
+
+  const rounds = location.state ? location.state.rounds : history.push('/dashboard');;
 
   useEffect(() => {
     async function getMatches() {
@@ -33,7 +39,7 @@ const Matches = () => {
     }
 
     getMatches();
-  }, [id]);
+  }, [id, newMatch, newPlayer]);
 
 
   const handlerRedirectDetails = (info) => {
@@ -44,7 +50,7 @@ const Matches = () => {
   return (
     <div>
 
-      <PageTitle title={pageTitle} tournamentId={id}/>
+      <PageTitle loggedIn={props.loggedIn} title={pageTitle} tournamentId={id} numRounds={rounds} setNewMatch={setNewMatch} setNewPlayer={setNewPlayer} />
 
       <Container fluid>
         {matches.map(match => {

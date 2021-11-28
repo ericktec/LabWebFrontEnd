@@ -10,19 +10,18 @@ import { useLocation } from 'react-router-dom';
 
 const Details = ( props ) => {
 
-    const location = useLocation();
+    const location = useLocation().state;
 
-
-    const playerName1 = location.state.player_one_details.first_name + ' ' + location.state.player_one_details.last_name;
-    const photoUrlPlayer1 = location.state.player_one_details.photo_url;
-    const playerName2 = location.state.player_two_details.first_name + ' ' + location.state.player_two_details.last_name;
-    const photoUrlPlayer2 = location.state.player_two_details.photo_url;
-    const round = 'Ronda ' + location.state.round;
-    const score = location.state.sets;
+    const playerName1 = location.player_one_details.first_name + ' ' + location.player_one_details.last_name;
+    const photoUrlPlayer1 = location.player_one_details.photo_url;
+    const playerName2 = location.player_two_details.first_name + ' ' + location.player_two_details.last_name;
+    const photoUrlPlayer2 = location.player_two_details.photo_url;
+    const round = 'Ronda ' + location.round;
+    const score = location.sets;
 
     return (
         <div>
-            <PageTitle title='Detalles' />
+            <PageTitle title='Detalles' loggedIn={props.loggedIn} />
 
             <Container className='mt-2 w-75' fluid >
                 <Row className='align'>
@@ -67,11 +66,19 @@ const Details = ( props ) => {
 
                             return (
                                 <Row className='mb-3' key={ set.set_number }>
-                                    <Col className='font-weight-bold'> {set.first_registration_games} </Col>
+                                    { set.first_registration_games > set.second_registration_games ? 
+                                       <Col className='font-weight-bold'> {set.first_registration_games} </Col> :
+                                       <Col className='text-muted'> {set.first_registration_games} </Col>
+                                    }
                                     <Col xs={6} md={6}>
                                         <Card.Text > Set {set.set_number+1}  </Card.Text>
                                     </Col>
-                                    <Col className='text-muted'> {set.second_registration_games} </Col>
+                                    { set.first_registration_games > set.second_registration_games ? 
+                                       <Col className='text-muted'> {set.second_registration_games} </Col> :
+                                       <Col className='font-weight-bold'> {set.first_registration_games} </Col>
+                                    }
+                                    
+                                    
                                 </Row>
                             )
 

@@ -5,7 +5,6 @@ import axios from 'axios';
 
 const PlayerModal = ( props ) => {
 
-    const [modalShow, setModalShow] = useState(false);
     const defaultImage = 'https://alfafafoods.com/wp-content/uploads/2020/10/PngJoy_gray-circle-login-user-icon-png-transparent-png_2750635-1.png';
     const [profileImage, setProfileImage] = useState(defaultImage);
     

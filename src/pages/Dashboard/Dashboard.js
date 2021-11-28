@@ -9,7 +9,7 @@ import PageTitle from '../../components/PageTitle/PageTitle';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
-const Dashboard = () => {
+const Dashboard = (props) => {
 
     const [tournaments, setTournaments] = useState([]);
 
@@ -34,19 +34,20 @@ const Dashboard = () => {
 
         getTournaments();
     }, []);
-    const handlerRedirectMatches = (idTorneo) => {
-        history.push('/matches', { id: idTorneo });
+    const handlerRedirectMatches = (idTorneo, roundNum) => {
+        history.push('/matches', { id: idTorneo, rounds: roundNum });
     }
     return (
         <div>
-            <PageTitle title={pageTitle} modal={pageTitle} />
+            <PageTitle loggedIn={props.loggedIn}
+             title={pageTitle} modal={pageTitle} />
             <Container fluid>
                 <Row>
                     <Container>
 
                         {tournaments.map(tournament =>
                             <div
-                                onClick={() => handlerRedirectMatches(tournament.tournament_playing_category_id)}
+                                onClick={() => handlerRedirectMatches(tournament.tournament_playing_category_id, tournament.number_of_rounds)}
                                 key={tournament.tournament_playing_category_id}>
                                 <CardTournament
                                     tournamentName={tournament.tournament_name}
