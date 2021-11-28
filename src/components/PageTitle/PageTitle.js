@@ -15,6 +15,7 @@ import { useHistory } from 'react-router-dom';
 const PageTitle = ( props ) => {
 
     const title = props.title;
+    const tournamentId = props.tournamentId;
 
     const [torneoModal, setTorneoModal] = React.useState(false);
     const [playerModal, setPlayerModal] = React.useState(false);
@@ -101,6 +102,7 @@ const PageTitle = ( props ) => {
             <RegisterPlayerModal
                 show={registerModal}
                 onHide={() => setRegisterModal(false)}
+                tournamentId={tournamentId}
             />
 
         </Container>

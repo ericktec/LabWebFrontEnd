@@ -7,12 +7,15 @@ import './Dashboard.scss';
 import CardTournament from '../../components/CardTournament/CardTournament';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const Dashboard = () => {
 
     const [tournaments, setTournaments] = useState([]);
 
     const pageTitle = 'Torneos';
+
+    const history = useHistory();
 
     useEffect(() => {
         async function getTournaments() {
@@ -31,18 +34,26 @@ const Dashboard = () => {
 
         getTournaments();
     }, []);
-
+    const handlerRedirectMatches = (idTorneo) => {
+        history.push('/matches', { id: idTorneo });
+    }
     return (
         <div>
-            <PageTitle title={pageTitle} modal={pageTitle}/>
+            <PageTitle title={pageTitle} modal={pageTitle} />
             <Container fluid>
                 <Row>
                     <Container>
 
-                        {tournaments.map(tournament => <CardTournament key={tournament.tournament_playing_category_id}
-                            tournamentName={tournament.tournament_name}
-                            tournamentImage={tournament.tournament_photo}
-                        />)}
+                        {tournaments.map(tournament =>
+                            <div
+                                onClick={() => handlerRedirectMatches(tournament.tournament_playing_category_id)}
+                                key={tournament.tournament_playing_category_id}>
+                                <CardTournament
+                                    tournamentName={tournament.tournament_name}
+                                    tournamentImage={tournament.tournament_photo}
+                                />
+                            </div>
+                        )}
                     </Container>
                 </Row>
             </Container>
